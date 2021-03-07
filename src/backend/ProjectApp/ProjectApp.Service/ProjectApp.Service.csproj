@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectApp.Data\ProjectApp.Data.csproj" />
+    <ProjectReference Include="..\ProjectApp.Common\ProjectApp.Common.csproj" />
+    <ProjectReference Include="..\ProjectApp.Interface\ProjectApp.Interface.csproj" />
+    <ProjectReference Include="..\ProjectApp.Model\ProjectApp.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
