@@ -1,0 +1,7 @@
+<nav class="horizontal">
+  <ul>
+    <li *ngFor="let item of menuItems;" (click)="setActiveRoute(item.url)">
+      <a [routerLink]="item.url" [ngClass]="{ 'active': item.active }">{{ item.title }}</a>
+    </li>
+  </ul>
+</nav>

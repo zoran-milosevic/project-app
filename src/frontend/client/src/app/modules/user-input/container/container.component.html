@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="textForm" (ngSubmit)="onSubmit()">
+
+        <h3>Please enter the text: </h3>
+
+        <div class="form-content">
+            <textarea formControlName="text" rows="4" cols="50">Enter text here...</textarea>
+
+            <br />
+
+            <button class="button">Count</button>
+        </div>
+    </form>
+</div>
+
+<div class="container" *ngIf="error">ERROR: {{ error }}</div>
+
+<div class="container">
+    <b>Number of words in text: {{ count }}</b>
+</div>

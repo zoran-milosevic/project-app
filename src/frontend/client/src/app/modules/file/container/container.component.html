@@ -1,0 +1,17 @@
+<div class="container">
+    <input type="file" id="file" (change)="handleFileInput($event)" accept=".txt">
+</div>
+
+<div class="container" *ngIf="error">ERROR: {{ error }}</div>
+
+<h3>Text from file:</h3>
+
+<p>{{ text }}</p>
+
+<div class="container">
+    <button class="button" (click)="countNumberOfWords()">Count</button>
+</div>
+
+<div class="container">
+    <b>Number of words in text: {{ count }}</b>
+</div>
