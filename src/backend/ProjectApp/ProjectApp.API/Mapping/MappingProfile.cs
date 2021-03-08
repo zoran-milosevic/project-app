@@ -17,7 +17,8 @@ namespace ProjectApp.API.Mapping
 
             // Entity to DTO
             CreateMap<UserProfile, UserProfileDTO>();
-            CreateMap<Text, TextDTO>();
+            CreateMap<Text, TextFromDbDTO>()
+                .ForMember(dest => dest.Text, opt => opt.MapFrom(src => src.TextContent));
         }
     }
 }

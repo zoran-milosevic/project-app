@@ -29,7 +29,7 @@ namespace ProjectApp.Service.Controllers
         {
             var txt = await _textService.GetTextAsync();
 
-            var result = _mapper.Map<Text, TextDTO>(txt);
+            var result = _mapper.Map<Text, TextFromDbDTO>(txt);
 
             return Ok(result);
         }
