@@ -121,7 +121,7 @@ dotnet ef database update Initial_App_Database --context AppDbContext
 ```
 * Generate an Update SQL Script from Migrations
 ```
-dotnet ef migrations script --context AppDbContext --output Migrations\App\Scripts\Database_2021_03_02_0810.sql
+dotnet ef migrations script --context AppDbContext --output Migrations\App\Scripts\Database_2021_03_08_1200.sql
 ```
 
 ### INTEGRATION TESTS

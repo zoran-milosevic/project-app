@@ -33,7 +33,7 @@ namespace ProjectApp.Data.Context
             {
                 // In case when no database provider has been configured for this DbContext at database migrations. EF Core Tools commands require a default AppDbContext()
                 // contructor instance to be created at design time in order to gather details about the application's entity types and how they map to a database schema.
-                optionsBuilder.UseSqlServer(@"Data Source=localhost;Initial catalog=Database;User ID=db;Password=db;Persist Security Info=False;Packet Size=4096");
+                optionsBuilder.UseSqlServer(@"Data Source=localhost;Initial catalog=SOLUTION;User ID=sln;Password=sln;Persist Security Info=False;Packet Size=4096");
             }
         }
 
