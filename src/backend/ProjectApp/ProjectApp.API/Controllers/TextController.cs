@@ -46,8 +46,6 @@ namespace ProjectApp.Service.Controllers
                 return BadRequest(validationResult.Errors); // needs refining
             }
 
-            var textToCount = _mapper.Map<TextBindingModel, Text>(model);
-
             var count = await _textService.GetTextWordsCountAsync(model.Text);
 
             var dto = new TextDTO()

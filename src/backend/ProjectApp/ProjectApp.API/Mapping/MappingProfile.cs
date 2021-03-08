@@ -4,6 +4,7 @@ using ProjectApp.Model.Entities.User;
 using ProjectApp.Model.DTO;
 using ProjectApp.BindingModel;
 using ProjectApp.Domain.Entities;
+using ProjectApp.DTO.Text;
 
 namespace ProjectApp.API.Mapping
 {
@@ -13,10 +14,10 @@ namespace ProjectApp.API.Mapping
         {
             // BindingModel to Entity
             CreateMap<UserProfileBindingModel, UserProfile>();
-            CreateMap<TextBindingModel, Text>();
 
             // Entity to DTO
             CreateMap<UserProfile, UserProfileDTO>();
+            CreateMap<Text, TextDTO>();
         }
     }
 }
