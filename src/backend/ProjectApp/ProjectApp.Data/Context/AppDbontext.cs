@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Data.Configurations;
+using ProjectApp.Domain.Entities;
 using ProjectApp.Model.Entities.User;
 
 namespace ProjectApp.Data.Context
@@ -24,6 +25,7 @@ namespace ProjectApp.Data.Context
 
         public DbSet<InternalUser> InternalUser { get; set; }
         public DbSet<Client> Client { get; set; }
+        public DbSet<Text> Text { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,7 +43,7 @@ namespace ProjectApp.Data.Context
 
             // MODEL CONFIGURATION
             modelBuilder.ApplyConfiguration(new UserProfileConfiguration());
-
+            modelBuilder.ApplyConfiguration(new TextConfiguration());
         }
     }
 }

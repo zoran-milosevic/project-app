@@ -39,6 +39,7 @@ namespace ProjectApp.Data
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IUserProfileRepository, UserProfileRepository>();
+            services.AddScoped<ITextRepository, TextRepository>();
         }
     }
 }

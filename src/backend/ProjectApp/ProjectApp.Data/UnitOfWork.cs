@@ -14,6 +14,7 @@ namespace ProjectApp.Data
         void Commit();
         void Rollback();
         IUserProfileRepository UserProfileRepository();
+        ITextRepository TextRepository();
     }
 
     public class UnitOfWork : IUnitOfWork
@@ -21,11 +22,15 @@ namespace ProjectApp.Data
         private bool _disposed = false;
         private readonly AppDbContext _context;
         private readonly IUserProfileRepository _userProfileRepository;
+        private readonly ITextRepository _textRepository;
 
-        public UnitOfWork(AppDbContext context, IUserProfileRepository userProfileRepository)
+        public UnitOfWork(AppDbContext context,
+            IUserProfileRepository userProfileRepository,
+            ITextRepository textRepository)
         {
             _context = context;
             _userProfileRepository = userProfileRepository;
+            _textRepository = textRepository;
         }
 
         public async Task<int> SaveAsync(CancellationToken cancellationToken = default(CancellationToken)) => await _context.SaveChangesAsync(cancellationToken);
@@ -36,6 +41,7 @@ namespace ProjectApp.Data
         // REPOSITORY
         public IUserProfileRepository UserProfileRepository() => _userProfileRepository;
 
+        public ITextRepository TextRepository() => _textRepository;
 
 
         public void Dispose()

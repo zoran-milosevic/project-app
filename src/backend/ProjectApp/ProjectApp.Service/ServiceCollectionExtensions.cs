@@ -7,7 +7,8 @@ namespace ProjectApp.Service
     {
         public static void AddDependenciesFor_Service(this IServiceCollection services)
         {
-            services.AddScoped<IUserProfileService, UserProfileService>();
+            services.AddTransient<IUserProfileService, UserProfileService>();
+            services.AddTransient<ITextService, TextService>();
         }
     }
 }
