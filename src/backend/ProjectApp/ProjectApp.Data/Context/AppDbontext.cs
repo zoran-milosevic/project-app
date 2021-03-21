@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProjectApp.Data.Configurations;
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
 using ProjectApp.Model.Entities.User;
 
 namespace ProjectApp.Data.Context

@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ProjectApp.Interface.Factory;
 using ProjectApp.Interface.Service;
+using ProjectApp.Service.Factory;
 
 namespace ProjectApp.Service
 {
@@ -9,6 +11,7 @@ namespace ProjectApp.Service
         {
             services.AddTransient<IUserProfileService, UserProfileService>();
             services.AddTransient<ITextService, TextService>();
+            services.AddTransient<ITextFactory, TextFactory>();
         }
     }
 }

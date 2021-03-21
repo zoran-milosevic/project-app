@@ -1,5 +1,5 @@
 
-namespace ProjectApp.Domain.Entities
+namespace ProjectApp.Model.Entities
 {
     public class Text
     {

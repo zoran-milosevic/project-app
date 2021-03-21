@@ -2,8 +2,7 @@ using AutoMapper;
 using ProjectApp.Model.Binding;
 using ProjectApp.Model.Entities.User;
 using ProjectApp.Model.DTO;
-using ProjectApp.BindingModel;
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
 using ProjectApp.DTO.Text;
 
 namespace ProjectApp.API.Mapping

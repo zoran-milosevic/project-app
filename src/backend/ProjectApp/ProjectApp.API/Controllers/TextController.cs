@@ -4,7 +4,8 @@ using AutoMapper;
 using ProjectApp.Interface.Service;
 using ProjectApp.Api.Validations;
 using ProjectApp.BindingModel;
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
+using ProjectApp.Common.Enum;
 using ProjectApp.DTO.Text;
 
 namespace ProjectApp.Service.Controllers
@@ -27,7 +28,7 @@ namespace ProjectApp.Service.Controllers
         [Route("")]
         public async Task<IActionResult> GetText()
         {
-            var txt = await _textService.GetTextAsync();
+            var txt = await _textService.GetTextAsync(TextSourceType.Database);
 
             var result = _mapper.Map<Text, TextFromDbDTO>(txt);
 

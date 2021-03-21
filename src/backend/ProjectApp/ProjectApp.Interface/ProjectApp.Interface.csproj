@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProjectApp.Model\ProjectApp.Model.csproj" />
+    <ProjectReference Include="..\ProjectApp.Common\ProjectApp.Common.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

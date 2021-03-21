@@ -64,6 +64,7 @@ dotnet add .\ProjectApp.Data\ProjectApp.Data.csproj reference .\ProjectApp.Model
 dotnet add .\ProjectApp.Data\ProjectApp.Data.csproj reference .\ProjectApp.Common\ProjectApp.Common.csproj
 dotnet add .\ProjectApp.Data\ProjectApp.Data.csproj reference .\ProjectApp.Interface\ProjectApp.Interface.csproj
 dotnet add .\ProjectApp.Interface\ProjectApp.Interface.csproj reference .\ProjectApp.Model\ProjectApp.Model.csproj
+dotnet add .\ProjectApp.Interface\ProjectApp.Interface.csproj reference .\ProjectApp.Common\ProjectApp.Common.csproj
 ```
 * Add package for ProjectApp.BusinessLogic, ProjectApp.Data class libraries
 ```

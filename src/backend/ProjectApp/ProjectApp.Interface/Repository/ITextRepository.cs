@@ -1,4 +1,4 @@
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
 
 namespace ProjectApp.Interface.Repository
 {

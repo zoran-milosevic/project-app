@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using ProjectApp.Data.Context;
 using ProjectApp.Interface.Repository;
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
 
 namespace ProjectApp.Data.Repository
 {

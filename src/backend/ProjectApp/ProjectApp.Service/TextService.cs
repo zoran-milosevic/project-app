@@ -2,8 +2,10 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using ProjectApp.Data;
-using ProjectApp.Domain.Entities;
+using ProjectApp.Model.Entities;
 using ProjectApp.Interface.Service;
+using ProjectApp.Common.Enum;
+using ProjectApp.Interface.Factory;
 
 namespace ProjectApp.Service
 {
@@ -11,16 +13,20 @@ namespace ProjectApp.Service
     {
         private readonly ILogger<TextService> _logger;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly ITextFactory _textFactory;
 
-        public TextService(ILogger<TextService> logger, IUnitOfWork unitOfWork)
+        public TextService(ILogger<TextService> logger, IUnitOfWork unitOfWork, ITextFactory textFactory)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
+            _textFactory = textFactory;
         }
 
-        public async Task<Text> GetTextAsync()
+        public async Task<Text> GetTextAsync(TextSourceType sourceType)
         {
-            return await _unitOfWork.TextRepository().GetById(1);
+            var text = await _textFactory.GetText(sourceType);
+
+            return text;
         }
 
         public async Task<int> GetTextWordsCountAsync(string text)
