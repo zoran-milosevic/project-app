@@ -1,10 +1,14 @@
 using System;
 using System.Linq;
+using System.Net;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProjectApp.Service;
 using ProjectApp.Data;
+using ProjectApp.Service;
 
 namespace ProjectApp.API
 {
@@ -77,6 +81,29 @@ namespace ProjectApp.API
         {
             // services.ConfigureIdentity();
             // services.ConfigureTokenAuthentication(configuration);
+        }
+
+        public static void ConfigureGlobalErrorHandling(this IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            app.UseExceptionHandler(config =>
+            {
+                config.Run(async context =>
+                {
+                    var error = context.Features.Get<IExceptionHandlerFeature>();
+
+                    context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                    context.Response.ContentType = "application/json";
+
+                    if (error != null)
+                    {
+                        await context.Response.WriteAsync(new
+                        {
+                            StatusCode = context.Response.StatusCode,
+                            ErrorMessage = error.Error.Message
+                        }.ToString());
+                    }
+                });
+            });
         }
 
         public static void RegisterDependencies(this IServiceCollection services)

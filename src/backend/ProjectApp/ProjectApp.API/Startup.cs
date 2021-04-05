@@ -43,6 +43,8 @@ namespace ProjectApp.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.ConfigureGlobalErrorHandling(env);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
