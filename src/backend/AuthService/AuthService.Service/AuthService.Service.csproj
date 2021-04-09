@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AuthService.Interface\AuthService.Interface.csproj" />
+    <ProjectReference Include="..\AuthService.Model\AuthService.Model.csproj" />
+    <ProjectReference Include="..\AuthService.Data\AuthService.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -5,19 +5,59 @@
             "name": ".NET Core Launch (API)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build-api",
             "program": "${workspaceFolder}/src/backend/ProjectApp/ProjectApp.API/bin/Debug/net5.0/ProjectApp.API.dll",
             "args": [],
             "cwd": "${workspaceFolder}/src/backend/ProjectApp/ProjectApp.API",
             "console": "internalConsole",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
-            "serverReadyAction": {
-                "action": "openExternally",
-                "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
+            // },
+            "launchBrowser": {
+                "enabled": false,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                }
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5101"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": ".NET Core Launch (AUTH)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-auth",
+            "program": "${workspaceFolder}/src/backend/AuthService/AuthService.API/bin/Debug/net5.0/AuthService.API.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/backend/AuthService/AuthService.API",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            // "serverReadyAction": {
+            //     "action": "openExternally",
+            //     "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
+            // },
+            "launchBrowser": {
+                "enabled": false,
+                "args": "${auto-detect-url}",
+                "windows": {
+                    "command": "cmd.exe",
+                    "args": "/C start ${auto-detect-url}"
+                }
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5001"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
@@ -37,6 +77,7 @@
         {
             "name": "Run All Projects",
             "configurations": [
+                ".NET Core Launch (AUTH)",
                 ".NET Core Launch (API)",
                 "Angular"
             ]
