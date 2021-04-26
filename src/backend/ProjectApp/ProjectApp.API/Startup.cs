@@ -58,7 +58,7 @@ namespace ProjectApp.API
 
             app.UseAuthentication();
             app.UseCors(_corsPolicyName);
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
 

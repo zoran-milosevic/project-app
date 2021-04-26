@@ -1,7 +1,10 @@
 # VISUAL STUDIO CODE EXTENSIONS
 * C# OmniSharp
+* Debugger for Chrome
 * Visual Studio IntelliCode
 * vscode-icons
+* Bracket Pair Colorizer 2
+* Path Intellisense
 * Partial Diff
 * Markdown Preview Enhanced
 * .NET Core Test Explorer
