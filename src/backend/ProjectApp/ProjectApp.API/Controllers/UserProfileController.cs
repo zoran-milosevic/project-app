@@ -61,7 +61,7 @@ namespace ProjectApp.Service.Controllers
             var userProfileToCreate = _mapper.Map<UserProfileBindingModel, UserProfile>(model);
 
             var newProfile = await _userProfileService.CreateAsync(userProfileToCreate);
-            var userProfile = await _userProfileService.GetByIdAsync(newProfile.UserId);
+            var userProfile = await _userProfileService.GetByIdAsync(newProfile.UserProfileId);
 
             var result = _mapper.Map<UserProfile, UserProfileDTO>(userProfile);
 
