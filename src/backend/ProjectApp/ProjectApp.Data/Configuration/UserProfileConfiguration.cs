@@ -9,10 +9,10 @@ namespace ProjectApp.Data.Configurations
         public void Configure(EntityTypeBuilder<UserProfile> builder)
         {
             builder
-                .HasKey(m => m.UserId);
+                .HasKey(m => m.UserProfileId);
 
             builder
-                .Property(m => m.UserId)
+                .Property(m => m.UserProfileId)
                 .ValueGeneratedNever();
             // .UseIdentityColumn();
 

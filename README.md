@@ -69,7 +69,7 @@ dotnet add .\ProjectApp.Data\ProjectApp.Data.csproj reference .\ProjectApp.Inter
 dotnet add .\ProjectApp.Interface\ProjectApp.Interface.csproj reference .\ProjectApp.Model\ProjectApp.Model.csproj
 dotnet add .\ProjectApp.Interface\ProjectApp.Interface.csproj reference .\ProjectApp.Common\ProjectApp.Common.csproj
 ```
-* Add package for ProjectApp.BusinessLogic, ProjectApp.Data class libraries
+* Add package for ProjectApp.Service, ProjectApp.Data class libraries
 ```
 dotnet add package NLog.Extensions.Logging
 ```
@@ -168,3 +168,53 @@ dotnet add package Microsoft.Extensions.Configuration.Json
 To execute integration tests, you need to have running an instance of SQL Server, the connection string in appsettings.Development.json file will be used to establish connection with SQL Server.
 
 If you get any error executing integration tests, check the error message, review code and repeat the process.
+
+### UNIT TESTS
+
+What is TDD? Testing is a common practice in nowadays, because with unit tests, it's easy to performing tests for features before to publish, Test Driven Development (TDD) is the way to define unit tests and validate the behavior in code.
+
+Another concept in TDD is AAA: Arrange, Act and Assert; Arrange is the block for creation of objects, Act is the block to place all invocations for methods and Assert is the block to validate the results from methods invocation.
+
+Since We're working with In memory database for unit tests, We need to create a class to mock UserProfileDbContext class and also add data to perform testing for UserProfileDbContext extension methods.
+
+To be clear: these unit tests do not establish a connection with SQL Server.
+
+* Create a xUnit test project for ProjectApp.Data.Test, add a projects to the solution file and add project's reference
+```
+dotnet new xunit -lang "C#" -f net5.0 -o ProjectApp.Data.Test
+dotnet sln add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj
+dotnet add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj reference .\ProjectApp.Data\ProjectApp.Data.csproj
+dotnet add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj reference .\ProjectApp.Model\ProjectApp.Model.csproj
+```
+
+* Add the following NuGet packages for project:
+```
+dotnet add package Microsoft.AspNetCore.Mvc.Core
+dotnet add package Microsoft.EntityFrameworkCore.InMemory
+```
+
+* Remove UnitTest1.cs file
+
+Now we proceed to add code related for unit tests, these tests will work with In memory database. Here we unit test isolated domain models, integration test the rest. Unit test is decoupled from the implementation details of controllers and business logic.
+
+How Unit Tests Work?
+
+DbContextMocker creates an instance of AppDbContext using in memory database, the dbName parameter sets the name for in memory database; then there is an invocation for Seed method, this method adds entities for AppDbContext instance in order to provide results.
+
+DbContextExtensions class contains Seed extension method.
+
+UserProfileRepositoryUnitTest class contains all tests for UserProfileRepository class.
+
+Keep in mind each test uses a different in memory database, inside of each test method. We retrieve in memory database using the name of test method with nameof operator.
+
+At this level (Unit tests), we only need to check the operations for repositories.
+
+* The process for unit tests is:
+    1. Create an instance of DbContext
+    2. Create an instance of repository
+    3. Invoke repository's method
+    4. Get value from repository's invocation
+    5. Dispose DbContext instance
+    6. Validate response
+
+Run all tests using test explorer, if you get any error, check the error message, review code and repeat the process.

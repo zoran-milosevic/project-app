@@ -7,7 +7,7 @@ namespace ProjectApp.Model.Entities.User
         {
         }
 
-        public int UserId { get; set; }
+        public int UserProfileId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public abstract int UserType { get; set; }

@@ -7,6 +7,6 @@ namespace ProjectApp.Model.Entities.User
         {
         }
 
-        public override int UserType { get => 2; set => UserId = value; }
+        public override int UserType { get => 2; set => UserProfileId = value; }
     }
 }
