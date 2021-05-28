@@ -5,7 +5,7 @@ import { ContainerComponent } from '.';
 
 const routes: Routes = [
     {
-        path: 'database',
+        path: '',
         component: ContainerComponent,
         children: [
             

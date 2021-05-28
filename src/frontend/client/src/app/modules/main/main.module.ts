@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { MainRoutingModule } from './main.router';
 
 import { COMPONENTS } from './index';

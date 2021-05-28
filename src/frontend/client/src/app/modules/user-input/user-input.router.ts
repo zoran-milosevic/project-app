@@ -5,7 +5,7 @@ import { ContainerComponent } from '.';
 
 const routes: Routes = [
     {
-        path: 'user-input',
+        path: '',
         component: ContainerComponent,
         children: [
 

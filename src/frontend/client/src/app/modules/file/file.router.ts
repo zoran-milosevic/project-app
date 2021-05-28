@@ -5,7 +5,7 @@ import { ContainerComponent } from '.';
 
 const routes: Routes = [
     {
-        path: 'file',
+        path: '',
         component: ContainerComponent,
         children: [
 
