@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule} from '@shared/shared.module';
-import { UserInputRoutingModule } from './user-input.router';
+import { UserInputRoutingModule } from './user-input-routing.module';
 
 import { COMPONENTS } from './index';
 
