@@ -6,7 +6,7 @@ import { environment } from '@environments/environment';
 import { IText } from '@shared/models/text.model';
 import { ITextCount } from '@shared/models/count.model';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class TextService {
 
     constructor(private http: HttpClient) {

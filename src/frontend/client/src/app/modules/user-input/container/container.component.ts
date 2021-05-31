@@ -6,7 +6,8 @@ import { TextService } from '@core/services';
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  styleUrls: ['./container.component.css'],
+  providers: [TextService]
 })
 export class ContainerComponent implements OnInit {
 
