@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TextService } from '@core/services';
+import { TextService, LogService } from '@core/services';
 
 @Component({
   selector: 'app-container',
@@ -17,7 +17,7 @@ export class ContainerComponent implements OnInit {
 
   fileToUpload!: File;
 
-  constructor(private http: TextService) {
+  constructor(private log: LogService, private http: TextService) {
 
   }
 
@@ -25,9 +25,13 @@ export class ContainerComponent implements OnInit {
     this.http.getTextCount(this.text).subscribe({
       next: data => {
         this.count = data.textLength;
+
+        this.log.inspect(data);
       },
       error: error => {
         this.error = error.message;
+
+        this.log.inspect(error);
       }
     });
   }
