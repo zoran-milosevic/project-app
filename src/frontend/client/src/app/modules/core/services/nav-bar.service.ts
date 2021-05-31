@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { INavBarItem } from '@app/modules/shared/models/navbar.model';
+import { INavBarItem } from '@shared/models/navbar.model';
 
 @Injectable({ providedIn: 'root' })
 export class NavBarService {

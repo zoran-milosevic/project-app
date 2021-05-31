@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TextService } from '@app/modules/shared/providers/text.service';
+import { TextService } from '@core/services';
 
 @Component({
   selector: 'app-container',

@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@environments/environment';
 
-import { IText } from '@app/modules/shared/models/text.model';
-import { ITextCount } from '@app/modules/shared/models/count.model';
+import { IText } from '@shared/models/text.model';
+import { ITextCount } from '@shared/models/count.model';
 
 @Injectable({ providedIn: 'root' })
 export class TextService {

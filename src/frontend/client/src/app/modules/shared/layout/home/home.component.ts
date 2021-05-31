@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NavBarService } from '@app/modules/shared/providers';
+import { NavBarService } from '@core/services';
 
-import { INavBarItem } from '@app/modules/shared/models/navbar.model';
+import { INavBarItem } from '@shared/models/navbar.model';
 
 @Component({
   selector: 'app-root',

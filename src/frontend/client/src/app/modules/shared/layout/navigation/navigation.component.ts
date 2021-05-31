@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { INavBarItem } from '@app/modules/shared/models/navbar.model';
+import { INavBarItem } from '@shared/models/navbar.model';
 
 @Component({
   selector: 'app-navigation',

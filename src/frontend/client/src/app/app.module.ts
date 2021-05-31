@@ -1,23 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import { CoreModule } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
 import { RoutingModule } from './routing.module';
 
-import { APP_COMPONENTS } from '.';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from '@shared/layout';
 
 @NgModule({
-  declarations: [
-    APP_COMPONENTS
-  ],
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpClientModule
-  ],
-  providers: [
-
+    CoreModule,
+    SharedModule
   ],
   bootstrap: [HomeComponent]
 })

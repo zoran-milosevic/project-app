@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SharedModule} from '@shared/shared.module';
 import { UserInputRoutingModule } from './user-input.router';
 
 import { COMPONENTS } from './index';
-
 
 @NgModule({
   declarations: [
@@ -14,8 +12,7 @@ import { COMPONENTS } from './index';
   imports: [
     CommonModule,
     UserInputRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   providers: [
 

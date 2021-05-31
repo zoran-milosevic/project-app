@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { MainRoutingModule } from './main.router';
+import { SharedModule} from '@shared/shared.module';
+import { HomeRoutingModule } from './home.router';
 
 import { COMPONENTS } from './index';
 
@@ -11,7 +11,8 @@ import { COMPONENTS } from './index';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ],
   providers: [
 
@@ -20,4 +21,4 @@ import { COMPONENTS } from './index';
     COMPONENTS
   ]
 })
-export class MainModule { }
+export class HomeModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { TextService } from '@app/modules/shared/providers/text.service';
+import { TextService } from '@core/services';
 
 @Component({
   selector: 'app-container',
