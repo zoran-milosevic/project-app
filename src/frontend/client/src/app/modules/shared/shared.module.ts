@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { LAYOUT_COMPONENTS } from './layout/';
+import { LAYOUT_COMPONENTS } from './layout';
+import { PIPES } from './pipes';
 
 @NgModule({
   declarations: [
-    LAYOUT_COMPONENTS
+    ...LAYOUT_COMPONENTS,
+    ...PIPES
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { LAYOUT_COMPONENTS } from './layout/';
     ReactiveFormsModule
   ],
   exports: [
-    LAYOUT_COMPONENTS,
+    ...LAYOUT_COMPONENTS,
+    ...PIPES,
     FormsModule,
     ReactiveFormsModule
   ]

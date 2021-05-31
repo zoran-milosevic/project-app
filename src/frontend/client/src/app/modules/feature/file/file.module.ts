@@ -7,7 +7,7 @@ import { COMPONENTS } from './index';
 
 @NgModule({
   declarations: [
-    COMPONENTS
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,
@@ -15,10 +15,7 @@ import { COMPONENTS } from './index';
     SharedModule
   ],
   providers: [
-    
-  ],
-  exports: [
-    COMPONENTS
+
   ]
 })
 export class FileModule { }
