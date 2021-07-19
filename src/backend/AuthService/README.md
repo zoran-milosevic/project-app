@@ -38,11 +38,11 @@ dotnet sln .\AuthService.sln list
 ```
 * Add class library for Service, Data, Model, Common, Interface
 ```
-dotnet new classlib -lang "C#" -f net5.0 -o AuthService.Service
-dotnet new classlib -lang "C#" -f net5.0 -o AuthService.Data
-dotnet new classlib -lang "C#" -f net5.0 -o AuthService.Model
-dotnet new classlib -lang "C#" -f net5.0 -o AuthService.Interface
-dotnet new classlib -lang "C#" -f net5.0 -o AuthService.Configuration
+dotnet new classlib -lang "C#" -f net6.0 -o AuthService.Service
+dotnet new classlib -lang "C#" -f net6.0 -o AuthService.Data
+dotnet new classlib -lang "C#" -f net6.0 -o AuthService.Model
+dotnet new classlib -lang "C#" -f net6.0 -o AuthService.Interface
+dotnet new classlib -lang "C#" -f net6.0 -o AuthService.Configuration
 ```
 * Add a projects to the solution file:
 ```
@@ -71,7 +71,7 @@ dotnet add .\AuthService.Configuration\AuthService.Configuration.csproj referenc
 * Reload VS Code Window if you re missing an using directive or an assembly reference - Open the command palette ( Ctrl + Shift + P ) and execute the command: >Reload Window.
 * Change dir to AuthService.API and run project:
 ```
-dotnet run
+dotnet run --launch-profile "Dev"
 ```
 
 ### CLEAN UP AND INSTALL AuthService.API PROJECT PACKAGE DEPENDENCIES
@@ -143,7 +143,7 @@ Integration tests will perform Http requests, each Http request will perform ope
 * Remove UnitTest1.cs file
 * Create a xUnit test project for AuthService.API
 ```
-dotnet new xunit -lang "C#" -f net5.0 -o AuthService.API.IntegrationTest
+dotnet new xunit -lang "C#" -f net6.0 -o AuthService.API.IntegrationTest
 dotnet sln add .\AuthService.API.IntegrationTest\AuthService.API.IntegrationTest.csproj
 dotnet add .\AuthService.API.IntegrationTest\AuthService.API.IntegrationTest.csproj reference .\AuthService.API\AuthService.API.csproj
 ```

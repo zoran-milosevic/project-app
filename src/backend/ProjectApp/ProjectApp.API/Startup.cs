@@ -31,7 +31,7 @@ namespace ProjectApp.API
             services.AddControllers().AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.WriteIndented = true;
-            }).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            });
 
             services.AddSwaggerGen(c =>
             {

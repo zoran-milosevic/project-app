@@ -38,11 +38,11 @@ dotnet sln .\ProjectApp.sln list
 ```
 * Add class library for Service, Data, Model, Common, Interface
 ```
-dotnet new classlib -lang "C#" -f net5.0 -o ProjectApp.Service
-dotnet new classlib -lang "C#" -f net5.0 -o ProjectApp.Data
-dotnet new classlib -lang "C#" -f net5.0 -o ProjectApp.Model
-dotnet new classlib -lang "C#" -f net5.0 -o ProjectApp.Common
-dotnet new classlib -lang "C#" -f net5.0 -o ProjectApp.Interface
+dotnet new classlib -lang "C#" -f net6.0 -o ProjectApp.Service
+dotnet new classlib -lang "C#" -f net6.0 -o ProjectApp.Data
+dotnet new classlib -lang "C#" -f net6.0 -o ProjectApp.Model
+dotnet new classlib -lang "C#" -f net6.0 -o ProjectApp.Common
+dotnet new classlib -lang "C#" -f net6.0 -o ProjectApp.Interface
 ```
 * Add a projects to the solution file:
 ```
@@ -76,7 +76,7 @@ dotnet add package NLog.Extensions.Logging
 * Reload VS Code Window if you re missing an using directive or an assembly reference - Open the command palette ( Ctrl + Shift + P ) and execute the command: >Reload Window. Delete the "C:\Program Files\dotnet\sdk\NuGetFallbackFolder" which fixed the issue.
 * Change dir to ProjectApp.API and run project:
 ```
-dotnet run
+dotnet run --launch-profile "Dev"
 ```
 
 ### CLEAN UP AND INSTALL ProjectApp.API PROJECT PACKAGE DEPENDENCIES
@@ -140,7 +140,7 @@ Integration tests will perform Http requests, each Http request will perform ope
 * Remove UnitTest1.cs file
 * Create a xUnit test project for ProjectApp.API
 ```
-dotnet new xunit -lang "C#" -f net5.0 -o ProjectApp.API.IntegrationTest
+dotnet new xunit -lang "C#" -f net6.0 -o ProjectApp.API.IntegrationTest
 dotnet sln add .\ProjectApp.API.IntegrationTest\ProjectApp.API.IntegrationTest.csproj
 dotnet add .\ProjectApp.API.IntegrationTest\ProjectApp.API.IntegrationTest.csproj reference .\ProjectApp.API\ProjectApp.API.csproj
 ```
@@ -181,7 +181,7 @@ To be clear: these unit tests do not establish a connection with SQL Server.
 
 * Create a xUnit test project for ProjectApp.Data.Test, add a projects to the solution file and add project's reference
 ```
-dotnet new xunit -lang "C#" -f net5.0 -o ProjectApp.Data.Test
+dotnet new xunit -lang "C#" -f net6.0 -o ProjectApp.Data.Test
 dotnet sln add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj
 dotnet add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj reference .\ProjectApp.Data\ProjectApp.Data.csproj
 dotnet add .\ProjectApp.Data.Test\ProjectApp.Data.Test.csproj reference .\ProjectApp.Model\ProjectApp.Model.csproj

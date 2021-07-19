@@ -1,0 +1,14 @@
+2021-07-19 02:19:04.3302 Info AppDomain Shutting down. Logger closing...
+2021-07-19 02:19:04.3384 Info Logger has been shut down.
+2021-07-19 02:19:35.4821 Info Message Template Auto Format enabled
+2021-07-19 02:19:35.4994 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-19 02:19:35.5502 Info Adding target FileTarget(Name=LOCAL_FILE)
+2021-07-19 02:19:35.5535 Info Adding target WebServiceTarget(Name=REST_API)
+2021-07-19 02:19:35.5935 Info Validating config: TargetNames=LOCAL_FILE, REST_API, ConfigItems=89, FilePath=/home/zoran/_SOURCE/project-app/src/backend/AuthService/AuthService.API/bin/Debug/net6.0/nlog.config
+2021-07-19 02:19:54.1522 Info Message Template Auto Format enabled
+2021-07-19 02:19:54.1641 Info Loading assembly: NLog.Web.AspNetCore
+2021-07-19 02:19:54.1995 Info Adding target FileTarget(Name=LOCAL_FILE)
+2021-07-19 02:19:54.2020 Info Adding target WebServiceTarget(Name=REST_API)
+2021-07-19 02:19:54.2244 Info Validating config: TargetNames=LOCAL_FILE, REST_API, ConfigItems=89, FilePath=/home/zoran/_SOURCE/project-app/src/backend/AuthService/AuthService.API/bin/Debug/net6.0/nlog.config
+2021-07-19 02:19:56.7788 Info AppDomain Shutting down. Logger closing...
+2021-07-19 02:19:56.7911 Info Logger has been shut down.
